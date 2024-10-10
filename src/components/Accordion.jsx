@@ -33,8 +33,8 @@ const Accordion = () => {
 
   const [isVisible, setIsVisible] = useState("");
 
-  const handleView = () => {
-    setIsVisible((prev) => (prev == id ? "" : id));
+  const handleView = (faqId) => {
+    setIsVisible(isVisible == faqId ? "" : faqId);
   };
 
   return (
@@ -51,7 +51,7 @@ const Accordion = () => {
               <div className="accordions">
                 <button
                   className="button-faq"
-                  onClick={(id) => setIsVisible(data.id)}
+                  onClick={() => handleView(data.id)}
                 >
                   {data.title}
                   <span>
